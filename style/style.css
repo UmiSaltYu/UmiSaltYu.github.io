@@ -1,50 +1,575 @@
+@font-face {
+    font-family: 'Noah';
+    src: url('../res/Noah/noah-regular-2.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'HanaMin';
+    src: url('../res/HanaMin/RiBenHuaYuanMingChaoTi-2.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OPPO Sans 4.0';
+    src: url('../res/OPPO_Sans_4.0/OPPO\ Sans\ 4.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Jetbrains Mono Medium';
+    src: url('../res/JetBrains\ Mono/JetBrainsMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Malak';
+    src: url('../res/Malak-Regular/Malak-Regular-Demo-2.ttf') format('truetype');
+}
+
 
 * {
-    padding: 0;
     margin: 0;
-}
-.top {
-    background-color: #42424221;
-    backdrop-filter: blur(15px);
-    height: 4vh;
-    padding: 20px 30px;
-    z-index: 1;
-}
-.top ul {
-    position: absolute;
-    top: 40px;
-    right: 4vw;
-}
-h1, .top a {
-    color: #1f1e33;
-    text-decoration: none;
-}
-h1{
-    position: absolute;
-    top: 20px;
-    left: 1.5vw;
-    z-index: 2;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/*border 外边框 padding 内 margin 外间距*/
-.Home {
-    height: 70vh;
+body {
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; */
+    background-color: #f5f5f5;
 }
-.HelloText {
+
+.float-shadow {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 170px;
+    position: fixed;
+    /* background-color: #00000000; */
+    box-shadow: 0px 70px 50px -28px inset #00000063;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 97;
+}
+
+/* 悬浮按钮 */
+.float-btn {
+    /* backdrop-filter: blur(5px); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 99vw;
+    height: 70px;
+    background-color: #5a5a5a00;
+    border: none;
+    z-index: 98;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    margin: 0.5vw;
+    border-radius: 12px;
+    transform: translateY(0);
+}
+
+.float-btn.hidden {
+    transform: translateY(-100%);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0);
+}
+
+.float-btn:hover {
+    background-color: #0202022f;
+    backdrop-filter: blur(15px);
+}
+
+.float-btn-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.float-btn-title {
+    font-family: 'Noah';
+    /* font-weight: 100; */
+    /* letter-spacing: 0.07em; */
+    color: white;
+    font-size: 20px;
+    min-width: 40px;
+}
+
+.float-btn-item {
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'HanaMin';
+    font-size: 15px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 7px;
+    transition: background-color 0.2s ease;
+}
+
+.float-btn-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.float-btn-menu {
+    position: fixed;
+    top: 25px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease;
+    z-index: 99;
+}
+
+.float-btn-menu:hover {
+    transform: scale(1.1);
+}
+
+.float-btn-menu:active {
+    transform: scale(0.95);
+}
+
+/* 侧边栏 */
+.sidebar {
+    backdrop-filter: blur(25px);
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 350px;
+    height: 96vh;
+    background-color: #1f1f1fc2;
+    box-shadow: 0px 10px 50px 5px #00000060;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    z-index: 100;
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    border-radius: 16px;
+    margin: 2vh;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar-btn {
+    height: 60px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding-left: 30px;
+    text-align: left;
+    transition: background-color 0.2s ease;
+    border-radius: 12px;
+    margin: 1px 12px;
+}
+
+.sidebar-btn:hover {
+    /* color: black; */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 遮罩层 */
+.overlay {
+    backdrop-filter: blur(7px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 99;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 主容器和板块 */
+.container {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+}
+
+.section {
+    /* padding: 60px 20px; */
+    text-align: center;
+}
+
+.section-1 {
+    background: url('../res/image/DreamLand.png') no-repeat top;
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -150px 120px -28px inset #0000009a;
+    left: 0vw;
+    width: 75vw;
+}
+
+.section-1 h1 {
+    font-family: 'JetBrains Mono Light';
+    color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    left: 18px;
+    bottom: 0.5vh;
+    font-size: 4vw;
+    margin-bottom: 20px;
+    z-index: 94;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.section-1 h1:hover {
+    backdrop-filter: blur(10px);
+    background-color: #0000001c;
+}
+
+.section-1 .toptext {
+    font-family: 'JetBrains Mono ExtraLight';
+    color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    left: 18px;
+    bottom: 90px;
+    font-size: 1.5vw;
+    margin-bottom: 20px;
+    z-index: 95;
+    border-radius: 8px;
+}
+
+.section-1 .toptext:hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
+    backdrop-filter: blur(10px);
+    background-color: #0000001c;
+}
+
+.section-1 .foot {
+    position: absolute;
+    bottom: 0.5vh;
+    font-size: 15px;
+    left: 18px;
+    color: #ffffff60;
+    background-color: #bebebe21;
+    backdrop-filter: blur(12px);
+    border-radius: 5px;
+}
+
+.main-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: flex-start;
+    align-items: flex-end; */
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.main-page-left {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 25vw;
+}
+
+/* 这里把定位改变关了，整个元素已经把窗口铺满了就不需要再改定位，滥用定位可能会导致子元素的定位出问题，见.text_zh注释 */
+.main-page-left .left-top {
+    position: relative;
+    display: flex;
+    /* left: 2vw; */
+    top: 0px;
+    right: 0px;
+    height: 45%;
+    width: auto;
+    background-color: #946767;
+}
+
+.main-page-left .left-top .text_en {
+    position: absolute;
+    font-family: 'OPPO Sans 4.0';
+    font-weight: 600;
+    position: absolute;
+    font-size: 83px;
+    line-height: 0.9;
+    bottom: 0;
+    /* margin: px 0px; */
+}
+
+/* 原本你这里写了这个元素的定位是绝对定位，如果父元素没有改定位那这个就会出问题，像这种直接向左置顶的没必要这么写 */
+/* 然后这个选择器看你想怎么写了，写这么复杂的话可以有效避免类名重复的问题，缺点就是写起来很麻烦（ */
+.main-page-left .left-top .text_zh {
+    position: absolute;
+    font-family: 'OPPO Sans 4.0';
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 1.1;
+    /* margin: px 0px; */
+}
+
+/* 改了改样式书写，这几个就够了 */
+.main-page-left .left-bottom {
+    display: flex;
+    height: 55%;
+    width: auto;
+    overflow: hidden
+}
+
+/* 这里是移动的文字，rotate确实可以转圈，但是两个盒子并列写就会出问题，你可以自己试试就知道了 */
+.movebox p {
+    text-align: center;
+    font-family: 'Jetbrains Mono Medium';
+    rotate: 90deg;
+    white-space: nowrap;
+    font-size: 60px;
+}
+
+/* 这个是移动文字的父盒子 */
+.movebox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* 应用动画部分 */
+.leftbox-1 p, .leftbox-3 p {
+    white-space: nowrap;
+    animation: moveup 50s linear infinite;
+    animation-delay: -25s;
+}
+.leftbox-2 p, .leftbox-4 p {
+    white-space: nowrap;
+    animation: movedown 50s linear infinite;
+    animation-delay: -25s;
+}
+
+/* 动画部分 */
+@keyframes moveup {
+    0% {
+        transform: translateX(25%);
+    }
+
+    100% {
+        transform: translateX(-25%);
+    }
+}
+
+@keyframes movedown {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+/*//////////////////*/
+
+.main-page-left .left-bottom .leftbox-1{
+    background-color: #8e959c;
+}
+.main-page-left .left-bottom .leftbox-2{
+    background-color: #576d77;
+}
+.main-page-left .left-bottom .leftbox-3{
+    background-color: #455e7a;
+}
+.main-page-left .left-bottom .leftbox-4{    
+    background-color: #3d6488;
+}
+
+.section-2 {
+    position: relative;
+    background-color: rgb(51, 51, 51);
+    height: 80vh;
+}
+
+.section-2 p {
+    color: #ffffff;
+    position: absolute;
+    font-family: 'OPPO sans 4.0';
+    font-weight: 100;
+    text-align: left;
+    bottom: 8vh;
+}
+
+.boxtext {
+    color: #ffffff;
+    font-family: 'HanaMin';
+    font-weight: 100;
+    position: absolute;
+    font-size: 60px;
+    text-align: left;
+    bottom: 0;
+}
+.boxtext2 {
+    font-family: 'Malak';
+    font-weight: 100;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100vw;
+}
+
+.flex-box {
+    flex: 1;
+    width: 33.3%;
+    height: 80vh;
+    /* padding: 40px 20px; */
+    background-color: #f8f9fa;
+    /* border-radius: 8px; */
+    box-shadow: 0 -10vh 50px -28px inset rgba(0, 0, 0, 0.616);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flex-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 -10vh 50px -28px inset rgba(0, 0, 0, 0.616);
+    /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); */
+}
+
+.flex-box-1 {
+    background: url(../res/image/LetheByUmiSaltYu.png) no-repeat top;
+    opacity: 0.7;
+    background-size: cover;
+}
+.flex-box-2 {
+    background: url(../res/image/CocotonCity.png) no-repeat center;
+    background-size: cover;
+    opacity: 0.7;
     
 }
-
-.About {
-    background-color: rgb(250, 250, 231);
-    border: 1px #ecece9 solid;
-    padding: 20px;
-}   
-header {
-    background-image: url("../res/image/miku.png");
-    background-repeat: no-repeat;
+.flex-box-3 {
+    background: url(../res/image/arcaea.jpg) no-repeat center top;
     background-size: cover;
-    background-position: center;
-    /* padding: 25px; */
-    height: 95vh;
-    z-index: -1;
-}   
+    opacity: 0.7;
+}
+
+/* .flex-box h2 {
+    margin-bottom: 15px;
+    color: #333;
+} */
+
+.section-3 {
+    text-align: left;
+    background-color: #1b1b1b;
+    color: white;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-3 p {
+    position: left;
+    font-family: 'OPPO sans 4.0';
+    font-size: 15px;
+    font-weight: 100;
+    left: 0;
+}
+
+@keyframes scroll-up{
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* 响应式设计 */
+@media (orientation: portrait) {
+    .float-btn {
+        padding: 0 15px;
+    }
+
+    .float-btn-left {
+        gap: 10px;
+    }
+
+    .float-btn-title {
+        font-size: 18px;
+    }
+
+    .float-btn-item {
+        font-size: 12px;
+        padding: 6px 10px;
+        display: none;
+    }
+
+    .sidebar {
+        width: 70%;
+        /* max-width: 300px; */
+    }  
+    .section-1 {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .section-1 h1 {
+        font-size: 8vw;
+        bottom: 1vh;
+    }
+
+    .section-1 .toptext {
+        font-size: 4vw;
+        bottom: 8vh;
+    }
+    .main-page {
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        /* justify-content: flex-start;
+        align-items: flex-end; */
+        max-width: 100vw;
+        max-height: 240vh;
+    }
+
+    .main-page-left {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .section-2 {
+        display: flex;
+        height: 80vh;
+    }
+    
+    .flex-container {
+        flex-direction: column;
+        max-height: 80vh;
+    }
+
+    .flex-box {
+        position: relative;
+        flex: 1;
+        height: 33.3vh;
+        width: 100vw;
+        /* padding: 40px 20px; */
+        background-color: #f8f9fa;
+        box-shadow: 0 -10vh 50px -28px inset rgba(0, 0, 0, 0.616);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+}
+

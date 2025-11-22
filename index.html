@@ -1,45 +1,145 @@
 <!DOCTYPE html>
-<html lang="zh_CN">
+<html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>夜空茶馆 | 海盐冰淇淋球夜猫</title>
+    <title>UmiSaltYu | 个人博客</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
-<header>
-    <h1>海盐冰淇淋球夜猫</h1>
-    <section class="top">
-    </section>
+    <!-- 阴影 -->
+    <div class="float-shadow"></div>
+    <!-- 悬浮按钮 -->
+    <div class="float-btn" id="floatBtn">
+        <div class="float-btn-left">
+            <span class="float-btn-title">UmiSaltYu's Teahouse</span>
+            <button class="float-btn-item">
+                <a href="https://github.com/UmiSaltYu/NightSkyArchives" target="_blank"
+                    style="color: white; text-decoration: none;">
+                    夜空档案馆
+                </a>
+            </button>
+            <button class="float-btn-item">画集(部分)</button>
+            <button class="float-btn-item">
+                <a href="https://space.bilibili.com/354167325" target="_blank"
+                    style="color: white; text-decoration: none;">
+                    哔哩哔哩主页
+                </a>
+            </button>
+            <button class="float-btn-item">
+                <a href="https://mxbraisedfish.github.io/pindou-draw/" target="_blank"
+                    style="color: white; text-decoration: none;">
+                    友链->红烧鱼
+                </a>
+            </button>
+        </div>
+    </div>
+    <!-- 菜单按钮（始终可见） -->
+    <button class="float-btn-menu" id="menuBtn">☰</button>
 
-    <section class="Home">
-    <h2 class="HelloText">你好！</h2>
-    <p class="HelloText2">我是海盐冰淇淋球夜猫</p>
-    <br/>
-    <blockquote>"映画みたいな色が付いた&nbsp;&nbsp;ラストシーン"<br/>Scarfaith/月島春果&nbsp;-&nbsp;ラストシーン</blockquote>
-    <ul>
-        <li>主页</li>
-        <li>图片</li>
-        <li><a href="https://space.bilibili.com/354167325" target="_blank">社交媒体</a></li>
-        <li><a href="https://mxbraisedfish.github.io/pindou-draw/" target="_blank">友链|红烧鱼</a></li>
-    </ul>
-    </section>
+    <!-- 侧边栏 -->
+    <nav class="sidebar" id="sidebar">
+        <button class="sidebar-btn"><a href="#" style="color: white; text-decoration: none;">首页</a></button>
+        <button class="sidebar-btn">
+            <a href="https://github.com/UmiSaltYu/NightSkyArchives" target="_blank"
+                style="color: white; text-decoration: none;">
+                夜空档案馆->GitHub仓库
+            </a>
+        </button>
+        <button class="sidebar-btn">画集(部分)</button>
+        <button class="sidebar-btn">
+            <a href="https://space.bilibili.com/354167325" target="_blank" style="color: white; text-decoration: none;">
+                哔哩哔哩主页
+            </a>
+        </button>
+        <button class="sidebar-btn">
+            <a href="https://mxbraisedfish.github.io/pindou-draw/" target="_blank"
+                style="color: white; text-decoration: none;">
+                友链->红烧鱼->拼豆草图网页
+            </a>
+        </button>
+    </nav>
 
-    <section class="About">
-    <h2>关于我</h2>
-    <p>绘画/C++/音游/数码</p>
-    <p>软件工程在读</p>
-    <p>爱好绘画，目前正在努力学习中<del><i>苦露西</i></del></p>
-    </section>
-</header>
+    <!-- 遮罩层 -->
+    <div class="overlay" id="overlay"></div>
 
+    <!-- 主容器 -->
+    <main class="container">
+        <!-- 板块1：顶部介绍 -->
+        <div class="main-page">
+            <div class="section section-1">
+                <p class="toptext">// To "Universe"</p>
+                <h1>NightSkyArchives</h1>
+                <footer>
+                    <p class="foot">&nbsp;©2025 UmiSaltYu&nbsp;</p>
+                </footer>
+            </div>
+            <!-- 改了这里 -->
+            <!-- 改了这里 -->
+            <!-- 改了这里 -->
+            <!-- 改了这里 -->
+            <!-- 稍微改了改left-bottom里面的结构,没什么别的变化 -->
+            <!-- 改了这里 -->
+            <!-- 改了这里 -->
+            <!-- 改了这里 -->
+            <!-- 改了这里 -->
+            <div class="main-page-left">
+                <div class="left-bottom">
+                    <div class="movebox leftbox-1">
+                        <p>NightSkyArchives//NightSkyArchives//NightSkyArchives//NightSkyArchives//</p>
+                    </div>
+                    <div class="movebox leftbox-2">
+                        <p>Paint//Minecraft//Paint//Minecraft//Paint//Minecraft//Paint//Minecraft//</p>
+                    </div>
+                    <div class="movebox leftbox-3">
+                        <p>Welcome//Welcome//Welcome//Welcome//Welcome//Welcome//Welcome//Welcome//</p>
+                    </div>
+                    <div class="movebox leftbox-4">
+                        <p>UmiSaltYu's&nbsp;&nbsp;Web//UmiSaltYu's&nbsp;&nbsp;Web//UmiSaltYu's&nbsp;&nbsp;Web//UmiSaltYu's&nbsp;&nbsp;Web//</p>
+                    </div>
+                </div>
+                <section class="left-top">
+                    <p class="text_zh">夜空<br>档案馆.</p>
+                    <p class="text_en"><br>Night<br>Sky<br>Archives.</p>
+                </section>
+            </div>
+        </div>
+            
+        <!-- 板块2：弹性布局内容 -->
+        <section class="section section-2">
+            <div class="flex-container">
+                <div class="flex-box flex-box-1">
+                    <h2 class="boxtext boxtext1">绘画</h2>
+                    <p>骗你的，其实我是在画布上拉史</p>
+                </div>
+                <div class="flex-box flex-box-2">
+                    <h2 class="boxtext boxtext2">Minecraft</h2>
+                    <p>不会生电不会pvp更不会建筑</p>
+                </div>
+                <div class="flex-box flex-box-3">
+                    <h2 class="boxtext boxtext3">音游</h2>
+                    <p>🐲👃满天飞我只能瑟瑟发抖</p>
+                </div>
+                <!-- <div class="flex-box flex-box-4">
+                    <h2>内容3</h2>
+                    <p>弹性盒子内容区域</p>
+                </div> -->
+            </div>
+        </section>
 
-    <main>
+        <!-- 板块3：底部信息 -->
+        <section class="section section-3">
+            <p>Copyright ©2025 UmiSaltYu, All Rights Reserved.</p>
+            <p>感谢 闷香红烧鱼</p>
+            <p></p>
+        </section>
+
 
     </main>
+    
 
-    <footer>
-        <p>Copyright © UmiSaltYu All Rights Reserved.</p>
-    </footer>
+    <script src="script/main.js"></script>
 </body>
 </html>
