@@ -99,7 +99,8 @@ body {
     background: none;
     border: none;
     color: white;
-    font-family: 'HanaMin';
+    font-family: 'OPPO sans 4.0';
+    font-weight: 100;
     font-size: 15px;
     cursor: pointer;
     padding: 8px 12px;
@@ -162,6 +163,8 @@ body {
     background: none;
     border: none;
     color: white;
+    font-family: 'OPPO sans 4.0';
+    font-weight: 400;
     font-size: 16px;
     cursor: pointer;
     padding-left: 30px;
@@ -208,7 +211,7 @@ body {
 }
 
 .section-1 {
-    background: url('../res/image/DreamLand.png') no-repeat top;
+    background: url('../res/image/DreamLand.webp') no-repeat top;
     background-size: cover;
     color: white;
     min-height: 100vh;
@@ -223,7 +226,7 @@ body {
 
 .section-1 h1 {
     font-family: 'JetBrains Mono';
-    font-weight: Light;
+    font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: 18px;
@@ -242,7 +245,7 @@ body {
 
 .section-1 .toptext {
     font-family: 'JetBrains Mono';
-    font-weight: ExtraLight;
+    font-weight: 100;
     color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: 18px;
@@ -332,7 +335,8 @@ body {
 /* 这里是移动的文字，rotate确实可以转圈，但是两个盒子并列写就会出问题，你可以自己试试就知道了 */
 .movebox p {
     text-align: center;
-    font-family: 'Jetbrains Mono Medium';
+    font-family: 'Jetbrains Mono';
+    font-weight: 700;
     rotate: 90deg;
     white-space: nowrap;
     font-size: 60px;
@@ -452,18 +456,18 @@ body {
 }
 
 .flex-box-1 {
-    background: url(../res/image/LetheByUmiSaltYu.png) no-repeat top;
+    background: url(../res/image/LetheByUmiSaltYu.webp) no-repeat top;
     opacity: 0.7;
     background-size: cover;
 }
 .flex-box-2 {
-    background: url(../res/image/CocotonCity.png) no-repeat center;
+    background: url(../res/image/CocotonCity.webp) no-repeat center;
     background-size: cover;
     opacity: 0.7;
     
 }
 .flex-box-3 {
-    background: url(../res/image/arcaea.jpg) no-repeat center top;
+    background: url(../res/image/arcaea.webp) no-repeat center top;
     background-size: cover;
     opacity: 0.7;
 }
@@ -555,12 +559,16 @@ body {
 
     .section-2 {
         display: flex;
-        height: 80vh;
+        height: 90vh;
+    }
+
+    .section-3 {
+        height: 10vh;
     }
     
     .flex-container {
         flex-direction: column;
-        max-height: 80vh;
+        max-height: 90vh;
     }
 
     .flex-box {
