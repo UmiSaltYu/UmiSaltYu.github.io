@@ -276,9 +276,6 @@ body {
 .main-page {
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
-    /* justify-content: flex-start;
-    align-items: flex-end; */
     max-width: 100vw;
     max-height: 100vh;
 }
