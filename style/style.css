@@ -222,7 +222,8 @@ body {
 }
 
 .section-1 h1 {
-    font-family: 'JetBrains Mono Light';
+    font-family: 'JetBrains Mono';
+    font-weight: Light;
     color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: 18px;
@@ -240,7 +241,8 @@ body {
 }
 
 .section-1 .toptext {
-    font-family: 'JetBrains Mono ExtraLight';
+    font-family: 'JetBrains Mono';
+    font-weight: ExtraLight;
     color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: 18px;
