@@ -271,7 +271,7 @@ body {
 .main-page {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* justify-content: flex-start;
     align-items: flex-end; */
     max-width: 100vw;
@@ -314,7 +314,7 @@ body {
     position: absolute;
     font-family: 'OPPO Sans 4.0';
     font-weight: 600;
-    font-size: 70px;
+    font-size: 60px;
     line-height: 1.1;
     /* margin: px 0px; */
 }
