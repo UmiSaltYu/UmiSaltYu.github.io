@@ -332,7 +332,7 @@ body {
 /* 这里是移动的文字，rotate确实可以转圈，但是两个盒子并列写就会出问题，你可以自己试试就知道了 */
 .movebox p {
     text-align: center;
-    font-family: 'Jetbrains Mono', monospacem, monaco;
+    font-family: 'Jetbrains Mono', monospace, monaco;
     font-weight: 700;
     rotate: 90deg;
     white-space: nowrap;
