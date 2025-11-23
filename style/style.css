@@ -225,8 +225,8 @@ body {
 }
 
 .section-1 h1 {
-    font-family: 'JetBrains Mono Light';
-    /* font-weight: 400; */
+    font-family: 'JetBrains Mono', monospace, monaco;
+    font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: 18px;
@@ -244,8 +244,8 @@ body {
 }
 
 .section-1 .toptext {
-    font-family: 'JetBrains Mono ExtraLight';
-    /* font-weight: 100; */
+    font-family: 'JetBrains Mono', monospace, monaco;
+    font-weight: 100;
     color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: 18px;
@@ -332,7 +332,7 @@ body {
 /* 这里是移动的文字，rotate确实可以转圈，但是两个盒子并列写就会出问题，你可以自己试试就知道了 */
 .movebox p {
     text-align: center;
-    font-family: 'Jetbrains Mono';
+    font-family: 'Jetbrains Mono', monospacem, monaco;
     font-weight: 700;
     rotate: 90deg;
     white-space: nowrap;
