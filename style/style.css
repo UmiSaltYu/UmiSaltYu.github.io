@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: 'Jetbrains Mono Medium';
-    src: url('../res/JetBrains\ Mono/JetBrainsMono-Regular.ttf') format('truetype');
+    src: url('../res/JetBrains\ Mono/JetBrainsMono-Medium.ttf') format('truetype');
 }
 
 @font-face {
@@ -100,7 +100,7 @@ body {
     border: none;
     color: white;
     font-family: 'OPPO sans 4.0';
-    font-weight: 100;
+    font-weight: 200;
     font-size: 15px;
     cursor: pointer;
     padding: 8px 12px;
@@ -164,7 +164,7 @@ body {
     border: none;
     color: white;
     font-family: 'OPPO sans 4.0';
-    font-weight: 400;
+    /* font-weight: 400; */
     font-size: 16px;
     cursor: pointer;
     padding-left: 30px;
@@ -225,8 +225,8 @@ body {
 }
 
 .section-1 h1 {
-    font-family: 'JetBrains Mono';
-    font-weight: 400;
+    font-family: 'JetBrains Mono Light';
+    /* font-weight: 400; */
     color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: 18px;
@@ -244,8 +244,8 @@ body {
 }
 
 .section-1 .toptext {
-    font-family: 'JetBrains Mono';
-    font-weight: 100;
+    font-family: 'JetBrains Mono ExtraLight';
+    /* font-weight: 100; */
     color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: 18px;
@@ -304,7 +304,7 @@ body {
     font-family: 'OPPO Sans 4.0';
     font-weight: 600;
     position: absolute;
-    font-size: 83px;
+    font-size: 10vh;
     line-height: 0.9;
     bottom: 0;
     /* margin: px 0px; */
@@ -316,7 +316,7 @@ body {
     position: absolute;
     font-family: 'OPPO Sans 4.0';
     font-weight: 600;
-    font-size: 60px;
+    font-size: 7vh;
     line-height: 1.1;
     /* margin: px 0px; */
 }
@@ -336,7 +336,7 @@ body {
     font-weight: 700;
     rotate: 90deg;
     white-space: nowrap;
-    font-size: 60px;
+    font-size: 3.7vw;
 }
 
 /* 这个是移动文字的父盒子 */
@@ -408,7 +408,7 @@ body {
     color: #ffffff;
     position: absolute;
     font-family: 'OPPO sans 4.0';
-    font-weight: 100;
+    font-weight: 200;
     text-align: left;
     bottom: 8vh;
 }
@@ -418,7 +418,7 @@ body {
     font-family: 'HanaMin';
     font-weight: 100;
     position: absolute;
-    font-size: 60px;
+    font-size: 4vw;
     text-align: left;
     bottom: 0;
 }
@@ -454,19 +454,19 @@ body {
 
 .flex-box-1 {
     background: url(../res/image/LetheByUmiSaltYu.webp) no-repeat top;
-    opacity: 0.7;
+    opacity: 0.9;
     background-size: cover;
 }
 .flex-box-2 {
     background: url(../res/image/CocotonCity.webp) no-repeat center;
     background-size: cover;
-    opacity: 0.7;
+    opacity: 0.9;
     
 }
 .flex-box-3 {
     background: url(../res/image/arcaea.webp) no-repeat center top;
     background-size: cover;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 /* .flex-box h2 {
@@ -475,7 +475,7 @@ body {
 } */
 
 .section-3 {
-    text-align: left;
+    position: relative;
     background-color: #1b1b1b;
     color: white;
     height: 20vh;
@@ -485,11 +485,13 @@ body {
     align-items: center;
 }
 .section-3 p {
-    position: left;
+    text-align: left;
+    position: absolute;
     font-family: 'OPPO sans 4.0';
-    font-size: 15px;
+    font-size: 1vw;
     font-weight: 100;
     left: 0;
+    top: 0;
 }
 
 @keyframes scroll-up{
@@ -554,6 +556,10 @@ body {
         height: 100vh;
     }
 
+    .movebox p {
+        font-size: 11vw;
+    }
+
     .section-2 {
         display: flex;
         height: 90vh;
@@ -561,6 +567,10 @@ body {
 
     .section-3 {
         height: 10vh;
+    }
+
+    .boxtext {
+        font-size: 12vw;
     }
     
     .flex-container {
