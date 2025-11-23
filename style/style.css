@@ -149,7 +149,7 @@ body {
     padding-top: 20px;
     z-index: 100;
     transform: translateX(120%);
-    transition: transform 0.3s ease;
+    transition: transform 0.42s cubic-bezier(0.43, 0.09, 0.13, 1.02);
     border-radius: 16px;
     margin: 2vh;
 }
