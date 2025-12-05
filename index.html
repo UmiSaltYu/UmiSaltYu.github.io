@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" href="./favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UmiSaltYu | 个人博客</title>
+    <title>UmiSaltYu | 夜空茶馆</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
 
@@ -22,18 +22,17 @@
                     夜空档案馆
                 </a>
             </button>
-            <button class="float-btn-item">画集(部分)</button>
+            <button class="float-btn-item">
+                <a href="./paints.html" style="color: white; text-decoration: none;">画集(部分)</a>
+            </button>
             <button class="float-btn-item">
                 <a href="https://space.bilibili.com/354167325" target="_blank"
                     style="color: white; text-decoration: none;">
                     哔哩哔哩
                 </a>
             </button>
-            <button class="float-btn-item">
-                <a href="https://mxbraisedfish.github.io/pindou-draw/" target="_blank"
-                    style="color: white; text-decoration: none;">
-                    友链->红烧鱼
-                </a>
+            <button class="float-btn-item" id="friends">
+                <p>友链</p>
             </button>
         </div>
     </div>
@@ -49,22 +48,29 @@
                 夜空档案馆
             </a>
         </button>
-        <button class="sidebar-btn">画集(部分)</button>
+        <button class="sidebar-btn">
+            <a href="./paints.html" style="color: white; text-decoration: none;">画集(部分)</a>
+        </button>
         <button class="sidebar-btn">
             <a href="https://space.bilibili.com/354167325" target="_blank" style="color: white; text-decoration: none;">
                 哔哩哔哩主页
             </a>
         </button>
-        <button class="sidebar-btn">
-            <a href="https://mxbraisedfish.github.io/pindou-draw/" target="_blank"
-                style="color: white; text-decoration: none;">
-                友链->红烧鱼
+    </nav>
+
+    <!-- 提示框 -->
+    <nav class="notices" id="notices">
+        <p class="title-notice">友链</p>
+        <botton class="notice-btn">
+            <a href="https://mxbraisedfish.github.io/pindou-draw/" target="_blank" style="color: white; text-decoration: none;">
+                红烧鱼->拼豆
             </a>
-        </button>
+        </botton>
     </nav>
 
     <!-- 遮罩层 -->
     <div class="overlay" id="overlay"></div>
+    <div class="overlay2" id="overlay2"></div>
 
     <!-- 主容器 -->
     <main class="container">
@@ -102,7 +108,7 @@
                     </div>
                 </div>
                 <section class="left-top">
-                    <p class="text_zh">夜空<br>档案馆.</p>
+                    <p class="text_zh">欢迎来到<br>夜空档案馆.</p>
                     <p class="text_en"><br>Night<br>Sky<br>Archives.</p>
                 </section>
             </div>
@@ -133,7 +139,7 @@
         <!-- 板块3：底部信息 -->
         <section class="section section-3">
             <p>Copyright ©2025 UmiSaltYu, All Rights Reserved.<br></p>
-            <p><br>感谢 闷香红烧鱼<br>请不要将我的作品用于任何ai训练</br></p>
+            <p><br>请不要将我的作品用于任何ai训练</br>感谢 闷香红烧鱼<br></p>
         </section>
 
 

@@ -1,7 +1,11 @@
 const menuBtn = document.getElementById('menuBtn');
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
+const overlay2 = document.getElementById('overlay2');
 const floatBtn = document.getElementById('floatBtn');
+const friends = document.getElementById('friends');
+const notices = document.getElementById('notices');
+
 
 let lastScrollY = 0;
 
@@ -11,10 +15,19 @@ menuBtn.addEventListener('click', () => {
     overlay.classList.toggle('active');
 });
 
+friends.addEventListener('click', () => {
+    notices.classList.toggle('active');
+    overlay2.classList.toggle('active');
+});
+// 得加上第二层遮罩
 // 遮罩层点击事件
 overlay.addEventListener('click', () => {
     sidebar.classList.remove('active');
     overlay.classList.remove('active');
+});
+overlay2.addEventListener('click', () => {
+    notices.classList.remove('active');
+    overlay2.classList.remove('active');
 });
 
 // 侧边栏按钮点击事件

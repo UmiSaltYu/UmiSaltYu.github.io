@@ -1,0 +1,353 @@
+@font-face {
+    font-family: 'Noah';
+    src: url('../res/Noah/noah-regular-2.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'HanaMin';
+    src: url('../res/HanaMin/RiBenHuaYuanMingChaoTi-2.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OPPO Sans 4.0';
+    src: url('../res/OPPO_Sans_4.0/OPPO\ Sans\ 4.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Jetbrains Mono';
+    src: url('../res/JetBrains\ Mono/JetBrainsMono-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Malak';
+    src: url('../res/Malak-Regular/Malak-Regular-Demo-2.ttf') format('truetype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; */
+    background-color: #f5f5f5;
+}
+
+.float-shadow {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 170px;
+    position: fixed;
+    /* background-color: #00000000; */
+    box-shadow: 0px 70px 50px -28px inset #00000063;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 97;
+}
+
+/* 悬浮按钮 */
+.float-btn {
+    /* backdrop-filter: blur(5px); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 99vw;
+    height: 70px;
+    background-color: #5a5a5a00;
+    border: none;
+    z-index: 98;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    margin: 0.5vw;
+    border-radius: 12px;
+    transform: translateY(0);
+}
+
+.float-btn.hidden {
+    transform: translateY(-100%);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0);
+}
+
+.float-btn:hover {
+    background-color: #0202022f;
+    backdrop-filter: blur(15px);
+}
+
+.float-btn-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.float-btn-title {
+    font-family: 'Noah';
+    /* font-weight: 100; */
+    /* letter-spacing: 0.07em; */
+    color: white;
+    font-size: 20px;
+    min-width: 40px;
+}
+
+.float-btn-item {
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'OPPO sans 4.0';
+    font-weight: 200;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 7px;
+    transition: background-color 0.2s ease;
+}
+
+.float-btn-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.float-btn-menu {
+    position: fixed;
+    top: 25px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease;
+    z-index: 99;
+}
+
+.float-btn-menu:hover {
+    transform: scale(1.1);
+}
+
+.float-btn-menu:active {
+    transform: scale(0.95);
+}
+
+/* 侧边栏 */
+.sidebar {
+    backdrop-filter: blur(25px);
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 350px;
+    height: 96vh;
+    background-color: #1f1f1fc2;
+    box-shadow: 0px 10px 50px 5px #00000060;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    z-index: 100;
+    transform: translateX(120%);
+    transition: transform 0.42s cubic-bezier(0.43, 0.09, 0.13, 1.02);
+    border-radius: 16px;
+    margin: 2vh;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar-btn {
+    height: 60px;
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'OPPO sans 4.0';
+    /* font-weight: 400; */
+    font-size: 16px;
+    cursor: pointer;
+    padding-left: 30px;
+    text-align: left;
+    transition: background-color 0.2s ease;
+    border-radius: 12px;
+    margin: 1px 12px;
+}
+
+.sidebar-btn:hover {
+    /* color: black; */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 遮罩层 */
+.overlay {
+    backdrop-filter: blur(7px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 99;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 主容器和板块 */
+.container {
+    /* margin-left: 0; */
+    transition: margin-left 0.3s ease;
+}
+
+.part-1 {
+    background-color: aqua;
+    /* height: 100vh; */
+    /* width: 100vw; */
+    z-index: 50;
+}
+
+.top {
+    position: absolute;
+    left: 0;
+    /* top: 0; */
+    background-color: #00000035;
+    backdrop-filter: blur(12px);
+    /* box-shadow: 0px 0px 30px 10px #0000004c; */
+    width: 25vw;
+    height: 100vh;
+    z-index: 96;
+}
+
+.title1 {
+    position: absolute;
+    left: 0;
+    bottom: 0.1vh;
+    z-index: 98;
+    font-family: 'HanaMin';
+    font-size: 10vw;
+    color: rgb(255, 255, 255);
+}
+
+.title2 {
+    position: absolute;
+    left: 0.8vw;
+    bottom: 16vh;
+    z-index: 98;
+    font-family: 'OPPO sans 4.0';
+    font-weight: 100;
+    font-size: 3vw;
+    color: #f5f5f5;
+}
+
+.down {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    z-index: 90;
+}
+
+.down .box1, .down .box2, .down .box3 {   
+    position: relative;
+    height: 33.33vh;
+    width: 100vw;
+    background-color: blueviolet;
+    z-index: 90;
+    
+}
+.down .box1{
+    background: url('../res/image/IMG_20251127_205901.png') center;
+}
+.down .box2{
+    background: url('../res/image/IMG_20251127_205920.png') center;
+}
+.down .box3{
+    background: url('../res/image/IMG_20251127_205958.png') center;
+    box-shadow: 0px -6vh 70px -10px inset #000000b3;
+}
+
+/* 响应式设计 */
+@media (orientation: portrait) {
+    .float-btn {
+        padding: 0 15px;
+    }
+
+    .float-btn-left {
+        gap: 10px;
+    }
+
+    .float-btn-title {
+        font-size: 18px;
+    }
+
+    .float-btn-item {
+        font-size: 12px;
+        padding: 6px 10px;
+        display: none;
+    }
+    .float-btn-menu {
+        top: 18px;
+    }
+
+    .sidebar {
+        width: 70%;
+        /* max-width: 300px; */
+    }  
+
+    .top {
+        position: absolute;
+        /* left: 0; */
+        bottom: 5vh;
+        background-color: #00000035;
+        backdrop-filter: blur(12px);
+        box-shadow: 0px 0px 30px 10px #0000004c;
+        height: 25vh;
+        width: 100vw;
+    }
+    
+    .down {
+        position: relative;
+        /* display: flex; */
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+
+    .down .box1, .down .box2, .down .box3 {   
+        position: relative;
+        height: 100vh;
+        width: 33.33vw;
+        background-color: blueviolet;
+        z-index: 90;
+    }
+
+    .title1 {
+        left: 0;
+        bottom: 5.1vh;
+        z-index: 98;
+        font-family: 'HanaMin';
+        font-size: 12vh;
+        color: rgb(255, 255, 255);
+    }
+
+    .title2 {
+        right: 0.8vh;
+        left: auto;
+        bottom: 5.7vh;
+        z-index: 98;
+        font-family: 'OPPO sans 4.0';
+        font-weight: 100;
+        font-size: 3.5vh;
+        color: #f5f5f5;
+    }
+
+}
+
