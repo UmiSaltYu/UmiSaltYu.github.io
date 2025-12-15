@@ -140,7 +140,7 @@ body {
     position: fixed;
     right: 0;
     top: 0;
-    width: 350px;
+    width: 20vw;
     height: 96vh;
     background-color: #1f1f1fc2;
     box-shadow: 0px 10px 50px 5px #00000060;
@@ -159,7 +159,8 @@ body {
 }
 
 .sidebar-btn {
-    height: 60px;
+    height: 5.5vh;
+    width: 18vw;
     background: none;
     border: none;
     color: white;
@@ -167,11 +168,11 @@ body {
     /* font-weight: 400; */
     font-size: 16px;
     cursor: pointer;
-    padding-left: 30px;
+    padding-left: 15px;
     text-align: left;
     transition: background-color 0.2s ease;
     border-radius: 12px;
-    margin: 1px 12px;
+    margin: 0.3vh 1vw;
 }
 
 .sidebar-btn:hover {
@@ -179,27 +180,74 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.sidebar-title {
+    padding-left: 10px;
+    font-family: 'OPPO sans 4.0';
+    font-weight: 200;
+    font-size: 4vh;
+    color: white;
+    margin: 3vh 0 5vh 1vw;
+}
+
 .notices {
     backdrop-filter: blur(25px);
     position: fixed;
-    width: 350px;
-    height: 96vh;
+    width: 50vw;
+    height: 50vh;
+    /* left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; */
     background-color: #1f1f1fc2;
     box-shadow: 0px 10px 50px 5px #00000060;
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     opacity: 0;
-    z-index: 101;
+    z-index: 100;
     visibility: hidden;
-    transition: transform 0.42s cubic-bezier(0.43, 0.09, 0.13, 1.02);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     border-radius: 16px;
-    margin: 2vh;
+    margin: 25vh 25vw;
 }
 
 .notices.active {
     opacity: 1;
     visibility: visible;
+}
+
+.title-notice {
+    padding-left: 10px;
+    font-family: 'OPPO sans 4.0';
+    font-weight: 200;
+    font-size: 4vh;
+    color: white;
+    margin: 5vh 0 5vh 1vw;
+}
+
+.notice-btn {
+    display: inline-block;
+    display: flex;
+    /* justify-content: center;  */
+    align-items: center; /* 垂直居中 */
+    height: 5.5vh;
+    width: 48vw;
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'OPPO sans 4.0';
+    /* font-weight: 400; */
+    font-size: 16px;
+    cursor: pointer;
+    padding-left: 15px;
+    text-align: left;
+    transition: background-color 0.2s ease;
+    border-radius: 12px;
+    margin: 0.3vh 1vw;
+}
+.notice-btn:hover {
+    /* color: black; */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* 遮罩层 */
@@ -221,6 +269,7 @@ body {
     opacity: 1;
     visibility: visible;
 }
+
 .overlay2 {
     backdrop-filter: blur(7px);
     position: fixed;
@@ -232,7 +281,7 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 100;
+    z-index: 99;
 }
 
 .overlay2.active {
@@ -568,9 +617,14 @@ body {
     }
 
     .sidebar {
-        width: 70%;
+        width: 60vw;
         /* max-width: 300px; */
-    }  
+    } 
+
+    .sidebar-btn {
+        width: 58vw;
+    }
+
     .section-1 {
         width: 100vw;
         height: 100vh;

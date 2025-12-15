@@ -14,17 +14,17 @@ menuBtn.addEventListener('click', () => {
     sidebar.classList.toggle('active');
     overlay.classList.toggle('active');
 });
+// 遮罩层点击事件
+overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+});
 
 friends.addEventListener('click', () => {
     notices.classList.toggle('active');
     overlay2.classList.toggle('active');
 });
 // 得加上第二层遮罩
-// 遮罩层点击事件
-overlay.addEventListener('click', () => {
-    sidebar.classList.remove('active');
-    overlay.classList.remove('active');
-});
 overlay2.addEventListener('click', () => {
     notices.classList.remove('active');
     overlay2.classList.remove('active');

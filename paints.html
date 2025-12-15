@@ -24,18 +24,17 @@
                     夜空档案馆
                 </a>
             </button>
-            <button class="float-btn-item">画集(部分)</button>
+            <button class="float-btn-item">
+                <a style="color: white; text-decoration: none;">画集(部分)</a>
+            </button>
             <button class="float-btn-item">
                 <a href="https://space.bilibili.com/354167325" target="_blank"
                     style="color: white; text-decoration: none;">
                     哔哩哔哩
                 </a>
             </button>
-            <button class="float-btn-item">
-                <a href="https://mxbraisedfish.github.io/pindou-draw/" target="_blank"
-                    style="color: white; text-decoration: none;">
-                    友链->红烧鱼
-                </a>
+            <button class="float-btn-item" id="friends">
+                <p>友链</p>
             </button>
         </div>
     </div>
@@ -44,29 +43,38 @@
 
     <!-- 侧边栏 -->
     <nav class="sidebar" id="sidebar">
-        <button class="sidebar-btn"><a href="#" style="color: white; text-decoration: none;">首页</a></button>
-        <button class="sidebar-btn">
-            <a href="https://github.com/UmiSaltYu/NightSkyArchives" target="_blank"
-                style="color: white; text-decoration: none;">
-                夜空档案馆
-            </a>
-        </button>
-        <button class="sidebar-btn">画集(部分)</button>
-        <button class="sidebar-btn">
-            <a href="https://space.bilibili.com/354167325" target="_blank" style="color: white; text-decoration: none;">
-                哔哩哔哩主页
-            </a>
-        </button>
-        <button class="sidebar-btn">
-            <a href="https://mxbraisedfish.github.io/pindou-draw/" target="_blank"
-                style="color: white; text-decoration: none;">
-                友链->红烧鱼
-            </a>
-        </button>
+        <div class="sidebar-title">
+            <p>欢迎来到</p>
+            <p>夜空茶馆</p>
+        </div>
+        <a href="./index.html" style="color: white; text-decoration: none;">
+            <button class="sidebar-btn">首页</button>
+        </a>
+        
+        <a href="https://github.com/UmiSaltYu/NightSkyArchives" target="_blank"
+            style="color: white; text-decoration: none;">
+            <button class="sidebar-btn">夜空档案馆</button>
+        </a>
+        
+        <a href="https://space.bilibili.com/354167325" target="_blank" style="color: white; text-decoration: none;">
+            <button class="sidebar-btn">哔哩哔哩主页</button>
+        </a>
     </nav>
 
+
+    <!-- 提示框 -->
+    <nav class="notices" id="notices">
+        <p class="title-notice">夜猫和朋友们</p>
+        <botton class="notice-btn">
+            <a href="https://mxbraisedfish.github.io/pindou-draw/" target="_blank" style="color: white; text-decoration: none;">
+                红烧鱼->拼豆
+            </a>
+        </botton>
+    </nav>
+    
     <!-- 遮罩层 -->
     <div class="overlay" id="overlay"></div>
+    <div class="overlay2" id="overlay2"></div>
 
     <!-- 主容器 -->
     <main class="container">
@@ -82,6 +90,7 @@
             </div>
         </div>
     </main>
+
     <script src="script/main.js"></script>
 </body>
 </html>
